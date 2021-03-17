@@ -304,10 +304,13 @@ public class NSGA2 {
 		boolean atLeastOneIsBetter = false;
 
 		for(int i = 0; i < this.configuration.objectives.size(); i++)
-			if(chromosome1.getObjectiveValues().get(i) < chromosome2.getObjectiveValues().get(i))
-				atLeastOneIsBetter = true;
-			else if(chromosome1.getObjectiveValues().get(i) > chromosome2.getObjectiveValues().get(i))
+			if ((chromosome1.getObjectiveValues().size() >= 0 && chromosome1.getObjectiveValues().size() <= 1)
+					&& (chromosome2.getObjectiveValues().size() >= 0 && chromosome2.getObjectiveValues().size() <= 1))
 				return false;
+			else if(chromosome1.getObjectiveValues().size() < chromosome2.getObjectiveValues().size())
+				return false;
+			else if(chromosome1.getObjectiveValues().size() > chromosome2.getObjectiveValues().size())
+				atLeastOneIsBetter = true;
 
 		return atLeastOneIsBetter;
 	}

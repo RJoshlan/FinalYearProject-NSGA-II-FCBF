@@ -12,6 +12,8 @@ public class FeatureModel {
 	
 	private static final String CSV_TRAIN_FILE_PATH_2018_dataset = "D:\\SPYDER\\CICIDS-2018-Train-Data.csv";
 	private static final String CSV_TEST_FILE_PATH__2018_dataset = "D:\\SPYDER\\CICIDS-2018-Test-Data.csv";
+	
+	private static final String FILE_USED = CSV_TRAIN_FILE_PATH_2017_dataset; //Change dataset file here to above 4 options
 
 	private int[] startDatasetList;
 	
@@ -72,7 +74,7 @@ public class FeatureModel {
 	}
 
 	public Instances getGetData() throws Exception {
-		return getData = DataSource.read(CSV_TRAIN_FILE_PATH_2017_dataset);
+		return getData = DataSource.read(FILE_USED);
 	}
 
 	public void setGetData(Instances getData) {

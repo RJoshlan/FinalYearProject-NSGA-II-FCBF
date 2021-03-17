@@ -209,7 +209,8 @@ public class Chromosome {
 			.append("] | Rank: ")
 			.append(this.rank)
 			.append(" | Crowding Distance: ")
-			.append(this.crowdingDistance);
+			.append(this.crowdingDistance)
+			.append("\n");
 
 		return response.toString();
 	}
