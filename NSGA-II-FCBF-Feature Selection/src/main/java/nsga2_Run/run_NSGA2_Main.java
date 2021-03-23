@@ -14,9 +14,9 @@ public class run_NSGA2_Main {
 
 		objectives.add(new MaximiseRelevance());		
 		Configuration configuration = new Configuration(objectives);
-		configuration.setGenerations(10);
+		configuration.setGenerations(20);
 		configuration.setPopulationSize(20);
-		configuration.setChromosomeLength(80); 
+		configuration.setChromosomeLength(78); 
 			
 		NSGA2 nsga2 = new NSGA2(configuration);
 		nsga2.run();

@@ -238,6 +238,13 @@ public final class Service {
 		return range.subList(0, count);
 	}
 	
+	public static boolean populaceHasUnsetRank(List<Chromosome> populace) {
+		for(Chromosome chromosome : populace)
+			if(chromosome.getRank() == -1)
+				return true;
+		return false;
+	}
+	
 	public static SortedMap<Integer, Chromosome> returnSortedChromosomes(List<Chromosome> chromosomes){
 		SortedMap<Integer, Chromosome> sortedChromosomes = new TreeMap<>();
 		for (Chromosome newChromosome : chromosomes) {
